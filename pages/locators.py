@@ -20,3 +20,7 @@ class CheckBasket():
 
 class ProductPageLocators():
     SUCCESS_MESSAGE= (By.CSS_SELECTOR, "#messages > div:nth-child(1)")
+
+class BasketLink():
+    VIEW_BASKET=(By.CSS_SELECTOR,"#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+    BASKET_EMPTY_LINE=(By.CSS_SELECTOR, "#content_inner > p") 
