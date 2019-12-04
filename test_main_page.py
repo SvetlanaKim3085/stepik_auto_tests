@@ -1,19 +1,21 @@
-from .pages.main_page import MainPage
-from .pages.login_page import LoginPage
 
-def test_should_be_login_link(browser):
-    link = "http://selenium1py.pythonanywhere.com"
-    page = MainPage(browser, link)
+from .pages.basket_page import BasketPage
+
+
+
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link=link = "http://selenium1py.pythonanywhere.com"
+    page = BasketPage(browser, link)
     page.open()
-    page.go_to_login_page()
-    login_page = LoginPage(browser, browser.current_url)
-    login_page.should_be_login_page()
+    page.go_to_basket()
+    page.basket_empty()
+    page.empty_basket_line()
 
-def test_guest_should_see_login_link(browser):
-    link = link = "http://selenium1py.pythonanywhere.com/"
-    page = MainPage(browser, link)
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
+    page=BasketPage(browser,link)
     page.open()
-    page.should_be_login_link()
-
-
-    
+    page.go_to_basket()
+    page.basket_empty()
+    page.empty_basket_line()
