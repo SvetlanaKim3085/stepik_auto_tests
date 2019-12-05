@@ -30,3 +30,11 @@ class LoginPage(BasePage):
 
     def user_is_logined(self):
         assert self.is_element_present(*Registration.account), "User is not logined"
+        
+        
+        
+        
+        
+        
+        
+      
