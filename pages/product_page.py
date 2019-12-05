@@ -5,8 +5,12 @@ from selenium.webdriver.common.by import By
 from .locators import CheckBasket
 from .locators import ProductPageLocators
 from .locators import BasePageLocators
+from .login_page import LoginPage
 
 
+class MainPage(BasePage):
+    def __init__(self, *args, **kwargs):
+        super(MainPage, self).__init__(*args, **kwargs)
 
 class ProductPage(BasePage):        
     def add_to_basket(self):
